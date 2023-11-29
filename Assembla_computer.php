@@ -25,9 +25,9 @@
   if (isset ($_POST['nome']))      {$nome=$_POST['nome'];}           else {$nome='';}
   if (isset ($_POST['indirizzo'])) {$indirizzo=$_POST['indirizzo'];} else {$indirizzo ='';}
   if (isset ($_POST['Email'])) {$Email=$_POST['Email'];} else {$Email ='';}
-  if (isset ($_POST['processore']))   {$processore=$_POST['processore'];}     else {$processore='';}
-  if (isset ($_POST['scheda_video']))      {$scheda_video=$_POST['scheda_video'];} else {$scheda_video='';}
-  if (isset ($_POST['scheda_madre'])) {$scheda_madre=$_POST['scheda_madre'];} else {$scheda_madre ='';}
+  if (isset ($_POST['scelta-cpu']))   {$processore=$_POST['scelta-cpu'];}     else {$processore='';}
+  if (isset ($_POST['scelta-gpu']))      {$scheda_video=$_POST['scelta-gpu'];} else {$scheda_video='';}
+  if (isset ($_POST['scheda-madre'])) {$scheda_madre=$_POST['scheda-madre'];} else {$scheda_madre ='';}
 
   echo "Dati inseriti in tabella utente";
   echo "<p> Cognome  : ". $cognome."</p> ";
@@ -51,20 +51,18 @@
        {
        die('Attenzione non connesso: ' . mysqli_error());
        }
-
-
-   $qu= ("insert into tbl_utente
+   $qu= ("insert into tbl_utente(Cognome, Nome, Indirizzo, Email)
           values (
             '$cognome',
-               '$nome',
-          '$indirizzo',
-          '$Email')
+            '$nome',
+            '$indirizzo',
+            '$Email')
       ");
-  $qu= ("insert into tbl_components
+  $qu= ("insert into tbl_components(processore, scheda_video, scheda_madre)
       values (
-        '$processore',
+           '$processore',
            '$scheda_video',
-      '$scheda_madre')
+           '$scheda_madre')
   ");
 									 
    $risultato = mysqli_query($connessione,$qu);

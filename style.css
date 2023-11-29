@@ -1,19 +1,37 @@
 body {
   background-image: url("pcomponents.jpg");
   background-repeat: no-repeat;
-  background-position:fixed;
-  background-size: auto;
-  
+  background-size: cover;
+  background-position: center;
 }
 
 
-.button {
-  background-color: #04AA6D; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
+.info h3 {
+  color: darkorange;
+  font-size: 30px;
+  font-weight: lighter;
+}
+.info h1{
+  color:orangered;
+  font-size:220%;
+  font-weight: bold;
+}
+.info input {
+  font-size: 20px;
+  color: blue;
+}
+
+.info select {
+  font-size:20px;
+  color:white;
+  background-color: rebeccapurple;
+}
+.info button {
+  color:orange;
+  font-size:28px;
+  font-weight: lighter;
+  background-color: rebeccapurple;
+  display: flex;
+  flex-direction: row;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
 }
